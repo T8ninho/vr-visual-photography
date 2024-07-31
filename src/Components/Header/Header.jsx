@@ -1,15 +1,18 @@
-import { NavBar } from "./Header.styled";
+import Botao from "../Botao/Botao";
+import { NavBarNB, ContainerNB, LinksNB } from "./Header.styled";
 
 export default function Header() {
 	return(
-		<NavBar>
-			<div>
-				<h1>VR VISUAL</h1>
-			</div>
-			<div>
-				<a href="#">Trabalhos</a>
-				<a href="#">Fale Comigo</a>
-			</div>
-		</NavBar>
+		<NavBarNB>
+			<ContainerNB>
+				<div>
+					<h1>VR VISUAL</h1>
+				</div>
+				<LinksNB>
+					<a href="#">Trabalhos</a>
+					<Botao href="#">Fale Comigo</Botao>
+				</LinksNB>
+			</ContainerNB>
+		</NavBarNB>
 	)
 }
