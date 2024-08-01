@@ -38,7 +38,7 @@ export const DestaqueItemCT = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: relative; // Adiciona esta linha
+	position: relative;
 
 	&::after {
 		content: "";

@@ -5,6 +5,8 @@ export const BotaoFC = styled.div`
 	padding: 10px 30px;
 	border-radius: 8px;
 	transition: ease-in-out .2s;
+	text-align: center;
+	color: #fff;
 
 	&:hover{
 		background-color: #553324;

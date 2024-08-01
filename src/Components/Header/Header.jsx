@@ -7,6 +7,7 @@ export default function Header() {
 			<ContainerNB>
 				<div>
 					<h1>VR VISUAL</h1>
+					<h3>Photography</h3>
 				</div>
 				<LinksNB>
 					<a href="#">Trabalhos</a>

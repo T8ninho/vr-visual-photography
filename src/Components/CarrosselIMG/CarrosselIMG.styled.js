@@ -3,11 +3,26 @@ import styled from "styled-components";
 export const Imagem = styled.div`
 	display: flex;
 	place-items: center;
-	height: 80vh;
-	background-image: url(https://nbscom.com.br/wp-content/uploads/2021/07/girl_river_fog_style_model_photo_shoot-64647-6rhgkmar71dmxm0mjftehkcne7snp5zve5cp02h38bl.jpg);
-	background-position: center;
+	height: 90vh;
+	background-image: url(https://storage.alboom.ninja/sites/935/albuns/650975/dsc_8117.jpg?t=1590152512);
+	background-position: top;
 	background-size: cover;
+	background-attachment: fixed;
 	width: 100%;
 	justify-content: center;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+	position: relative;
+	
+	h1 {
+		color: #fff;
+		z-index: 1;
+	}
+
+	&::after {
+		content: '';
+		background-color: rgba(0,0,0,.5);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
 `;
