@@ -26,3 +26,41 @@ export const Imagem = styled.div`
 		height: 100%;
 	}
 `;
+
+export const ContainerCR = styled.div`
+	position: relative;
+	height: 90vh;
+	overflow: hidden;
+`
+export const InnerCR = styled.div`
+	display: flex;
+	transition: transform 0.5s ease-in-out;
+`
+export const ItemCR = styled.div`
+	min-width: 100%;
+
+	img {
+		width: 100%;
+		display: block;
+	}
+`
+export const ControleCR = styled.button`
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: rgba(0,0,0,0.5);
+	border: none;
+	color: #fff;
+	padding: 10px;
+	cursor: pointer;
+	font-size: 18px;
+	
+
+	&.prev {
+		left: 10px;
+	}
+
+	&.next{
+		right: 10px;
+	}
+`
