@@ -47,20 +47,27 @@ export const ItemCR = styled.div`
 export const ControleCR = styled.button`
 	position: absolute;
 	top: 50%;
+	height: 100%;
 	transform: translateY(-50%);
 	background-color: rgba(0,0,0,0.5);
 	border: none;
 	color: #fff;
-	padding: 10px;
+	padding: 20px;
 	cursor: pointer;
 	font-size: 18px;
+	opacity: 0;
+	transition: .2s ease-in-out;
+
+	&:hover {
+		opacity: 1;
+	}
 	
 
 	&.prev {
-		left: 10px;
+		left: 0;
 	}
 
 	&.next{
-		right: 10px;
+		right: 0;
 	}
 `
