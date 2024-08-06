@@ -7,7 +7,7 @@ export const ConteudoCT = styled.div`
 export const ContainerCT = styled.div`
 	background-color: #fff;
 	margin: 0 auto 60px auto;
-	padding: 60px;
+	padding: 0 0 60px 0;
 	max-width: 1280px;
 	box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 	text-align: center;

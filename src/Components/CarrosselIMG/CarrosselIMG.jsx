@@ -29,67 +29,43 @@ const images = [
 
 export default function CarrosselIMG() {
 
-	const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const innerRef = useRef(null);
-  const intervalRef = useRef(null);
-  const intervalTime = 3000; // Tempo em milissegundos (5 segundos)
-  
-  const items = [images[images.length - 1], ...images, images[0]];
-  
-  const updateIndex = (newIndex) => {
-    setIsTransitioning(true);
-    setCurrentIndex(newIndex);
-  };
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => {
-    updateIndex(currentIndex + 1);
-  };
+  const tempoRef = useRef(null)
+  const tempo = 3000 // tempo em milisegundos( 3000 = 3 segundos)
+	
+	const showSlide = (index) => {
+		if (index >= images.length) {
+			setCurrentIndex(0);
+		} else if (index < 0) {
+			setCurrentIndex(images.length - 1);
+		} else {
+			setCurrentIndex(index)
+		}
+	};
 
-  const prevSlide = () => {
-    updateIndex(currentIndex - 1);
-  };
+	const nextSlide = () => {
+		showSlide(currentIndex + 1);
+	};
+
+	const prevSlide = () => {
+		showSlide(currentIndex - 1);
+	};
 
   useEffect(() => {
-    intervalRef.current = setInterval(() => {
+    tempoRef.current = setInterval(() => {
       nextSlide();
-    }, intervalTime);
+    }, tempo);
 
     return () => {
-      clearInterval(intervalRef.current);
+      clearInterval(tempoRef.current)
     };
-  }, [currentIndex]);
+  },[showSlide]);
 
-  useEffect(() => {
-    if (isTransitioning) {
-      const transitionEnd = () => {
-        setIsTransitioning(false);
-        if (currentIndex === 0) {
-          innerRef.current.style.transition = 'none';
-          setCurrentIndex(images.length);
-          setTimeout(() => {
-            innerRef.current.style.transition = 'transform 0.5s ease';
-          }, 0);
-        } else if (currentIndex === images.length + 1) {
-          innerRef.current.style.transition = 'none';
-          setCurrentIndex(1);
-          setTimeout(() => {
-            innerRef.current.style.transition = 'transform 0.5s ease';
-          }, 0);
-        }
-      };
-
-      innerRef.current.addEventListener('transitionend', transitionEnd);
-
-      return () => {
-        innerRef.current.removeEventListener('transitionend', transitionEnd);
-      };
-    }
-  }, [currentIndex, isTransitioning]);
 	return(
 		<ContainerCR>
-			<InnerCR ref={innerRef} style={{ transform: `translateX(${-currentIndex * 100}%)` }}>
-				{items.map((item, index) => (
+			<InnerCR style={{ transform: `translateX(${-currentIndex * 100}%)` }}>
+				{images.map((item, index) => (
 					<ItemCR key={item.id} className={`${index === currentIndex ? 'active' : ''}`}>
 						<img src={item.image} alt={`Imagem ${index + 1}`} />
 

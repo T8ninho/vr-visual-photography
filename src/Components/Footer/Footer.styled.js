@@ -8,10 +8,13 @@ export const SobreFT = styled.div`
 	display: flex;
 	margin: 0 auto;
 	padding: 20px 0;
-	justify-content: space-between;
-	gap: 20px;
+	justify-content: center;
+	gap: 100px;
 
 	.LinhaCor{
+	}
+
+	.LinhaVertical {
 		border-right: 1px solid #553324;
 	}
 	
@@ -32,6 +35,14 @@ export const SaibaMaisFT = styled.div`
 	}
 `;
 
+export const ContatoFT = styled.div`
+
+`;
+
+export const LinhaFT = styled.div`
+	display: flex;
+`;
+
 export const CoprightFT = styled.div`
 	background-color: #553324;
 	text-align: center;
@@ -45,8 +56,4 @@ export const CoprightFT = styled.div`
 		color: #fff;
 		text-decoration: underline;
 	}
-`;
-
-export const LinhaFT = styled.div`
-	display: flex;
 `;

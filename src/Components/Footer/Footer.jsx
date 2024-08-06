@@ -1,5 +1,5 @@
 import Botao from "../Botao/Botao";
-import { ContainerFT, SobreFT, SaibaMaisFT, CoprightFT, LinhaFT } from "./Footer.styled";
+import { ContainerFT, SobreFT, SaibaMaisFT, ContatoFT, CoprightFT, LinhaFT } from "./Footer.styled";
 
 export default function Footer(){
 	return(
@@ -15,7 +15,8 @@ export default function Footer(){
 						</div>
 					</SaibaMaisFT>
 				</div>
-				<div>
+				<div className="LinhaVertical"></div>
+				<ContatoFT>
 					<h3>PROPOSTA DE FOTOGRAFIA</h3>
 					<LinhaFT>
 						<p>✅</p>
@@ -38,7 +39,7 @@ export default function Footer(){
 						<a>💥</a>
 					</LinhaFT>
 					<Botao>Contato</Botao>
-				</div>
+				</ContatoFT>
 			</SobreFT>
 			<CoprightFT>{/* irá ocupar 100% da tela */}
 				<p>© VR VISUAL Photography | Todos os direitos reservados</p>
